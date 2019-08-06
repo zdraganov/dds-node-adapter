@@ -8,19 +8,12 @@
     "type": "git",
     "url": "git://github.com/frankwallis/dds-node-adapter.git"
   },
-  "binary": {
-    "module_name": "dds_node_adapter",
-    "module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
-    "remote_path": "./{module_name}/v{version}/{configuration}/",
-    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
-    "host": "https://dds-node-adapter.s3-eu-west-1.amazonaws.com"
-  },
   "dependencies": {
     "napa": "^3.0.0",
     "node-pre-gyp": "^0.12.0"
   },
   "scripts": {
-    "install": "napa df7cb/dds#linux-memory:dds && node-pre-gyp install --fallback-to-build",
+    "install": "napa pierretallotte/dds#master:dds && node-pre-gyp install --fallback-to-build",
     "clean": "node-pre-gyp clean",
     "build": "node-pre-gyp build",
     "rebuild": "node-pre-gyp reinstall --build-from-source",
